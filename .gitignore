@@ -9,3 +9,7 @@ logs/
 .idea/
 *.iml
 .vscode/
+kubeconfig
+kubeconfig.yaml
+kubeconfig.yml
+.kube/
