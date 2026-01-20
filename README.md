@@ -27,6 +27,10 @@ The workflow will build the Docker image and push it to your own GitHub Containe
 
 When writing your Kubernetes manifests, use your image path. Do not use the upstream repo's path.
 
+## Troubleshooting
+
+For troubleshooting steps, please check out [TROUBLESHOOTING](TROUBLESHOOTING.md) if you need extra help.
+
 ## Local Development
 
 You can build the image locally with Docker or Podman:
