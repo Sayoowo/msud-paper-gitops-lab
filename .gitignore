@@ -13,3 +13,5 @@ kubeconfig
 kubeconfig.yaml
 kubeconfig.yml
 .kube/
+CLAUDE_INFO.md
+CLAUDE.md
