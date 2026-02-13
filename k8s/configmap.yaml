@@ -1,7 +1,7 @@
 apiVersion: v1
 kind: ConfigMap
 metadata:
-  name: example-paper-config
+  name: sayo
   namespace: sayo
 data:
   server.properties: |
