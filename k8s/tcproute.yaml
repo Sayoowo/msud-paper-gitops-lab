@@ -9,4 +9,4 @@ spec:
   rules:
     - backendRefs:
         - name: sayo
-          port: 55555
+          port: 25565
