@@ -8,4 +8,4 @@ spec:
   listeners:
     - name: minecraft
       protocol: TCP
-      port: 55555
+      port: 31,500
