@@ -1,7 +1,12 @@
-# TODO: Create a Service named '<yourname>-paper' in the '<yourname>-paper' namespace
-#
-# Requirements:
-#   - Type: ClusterIP
-#   - Port: 25565
-#   - Target port: 25565
-#   - Selector should match the Deployment's pod labels
+apiVersion: v1
+kind: Service
+metadata:
+  name: sayo
+  namespace: sayo
+spec:
+  type: ClusterIP
+  selector:
+    app: sayo
+  ports:
+    - port: 25565
+      targetPort: 25565
