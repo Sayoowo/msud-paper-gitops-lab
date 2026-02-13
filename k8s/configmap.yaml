@@ -2,7 +2,7 @@ apiVersion: v1
 kind: ConfigMap
 metadata:
   name: sayo
-  namespace: sayo
+  namespace: sayooo
 data:
   server.properties: |
     server-port=25565
