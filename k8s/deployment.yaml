@@ -2,7 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name: sayo
-  namespace: sayoooo
+  namespace: sayooo
 spec:
   replicas: 1
   selector:
