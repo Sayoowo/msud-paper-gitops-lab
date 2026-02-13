@@ -1,12 +1,45 @@
-# TODO: Create a Deployment named '<yourname>-paper' in the '<yourname>-paper' namespace
-#
-# Requirements:
-#   - 1 replica
-#   - Use the image built by the CI pipeline
-#   - Container port: 25565
-#   - Resource requests: 1Gi memory, 500m CPU
-#   - Resource limits: 2Gi memory, 1000m CPU
-#   - Mount the ConfigMap at /server/server.properties (subPath)
-#   - Mount the PVC at /server/world
-#
-# Bonus: Add a readinessProbe using tcpSocket on port 25565
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sayo
+  namespace: sayo
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sayo
+  template:
+    metadata:
+      labels:
+        app: sayo
+    spec:
+      containers:
+        - name: paper
+          image: ghcr.io/xata/Sayoowo/msud-paper-gitops-lab/:latest
+          ports:
+            - containerPort: 25565
+          resources:
+            requests:
+              memory: "1Gi"
+              cpu: "500m"
+            limits:
+              memory: "2Gi"
+              cpu: "1000m"
+          volumeMounts:
+            - name: config
+              mountPath: /server/server.properties
+              subPath: server.properties
+            - name: world
+              mountPath: /server/world
+          readinessProbe:
+            tcpSocket:
+              port: 25565
+            initialDelaySeconds: 30
+            periodSeconds: 10
+      volumes:
+        - name: config
+          configMap:
+            name: example-paper-config
+        - name: world
+          persistentVolumeClaim:
+            claimName: example-paper-world
